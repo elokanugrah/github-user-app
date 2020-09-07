@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Github User App</string>
+    <string name="menu_item_saved_user">Saved User</string>
+    <string name="saved_user">Saved User</string>
+    <string name="user_avatar_desc">Image of user avatar</string>
+    <string name="error">Error</string>
+    <string name="cancel">Cancel</string>
+    <string name="retry">Retry</string>
+    <string name="app_logo_desc">Logo of app</string>
+    <string name="search">Search</string>
+    <string name="delete">Delete</string>
+    <string name="delete_icon_desc">Icon of delete</string>
+</resources>

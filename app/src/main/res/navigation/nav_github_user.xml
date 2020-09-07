@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_github_user"
+    app:startDestination="@id/searchUserFragment">
+
+    <fragment
+        android:id="@+id/searchUserFragment"
+        android:name="com.elok.githubuserapp.ui.fragments.SearchUserFragment"
+        android:label="SearchUserFragment" >
+        <action
+            android:id="@+id/action_searchUserFragment_to_userDetailViewPagerFragment"
+            app:destination="@id/userDetailViewPagerFragment" />
+        <action
+            android:id="@+id/action_searchUserFragment_to_savedUserFragment"
+            app:destination="@id/savedUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailViewPagerFragment"
+        android:name="com.elok.githubuserapp.ui.fragments.UserDetailViewPagerFragment"
+        android:label="UserDetailViewPagerFragment" >
+        <argument
+            android:name="user"
+            app:argType="com.elok.githubuserapp.data.Item" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedUserFragment"
+        android:name="com.elok.githubuserapp.ui.fragments.SavedUserFragment"
+        android:label="SavedUserFragment" >
+        <action
+            android:id="@+id/action_savedUserFragment_to_userDetailViewPagerFragment"
+            app:destination="@id/userDetailViewPagerFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SearchUserActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stateListAnimator="@animator/appbar_shadow_animator"
+        android:theme="@style/Theme.GithubUser.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:toolbarId="@id/toolbar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:buttonGravity="center_vertical"
+                app:contentInsetEnd="0dp"
+                app:contentInsetStart="0dp"
+                app:menu="@menu/menu_saved_user" />
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:contentDescription="@string/app_logo_desc"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_github_logo" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_input_field"
+            android:gravity="center"
+            android:theme="@style/Theme.GithubUser"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@android:color/transparent"
+            app:queryHint="@string/search" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/card_side_margin"
+        android:paddingBottom="48dp"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        app:spanCount="2"
+        tools:listitem="@layout/list_item_user_card" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
